@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-ivory: #FBF9F5;
+    --color-limestone: #EFEAE1;
+    --color-champagne: #E5DAC6;
+    --color-amber: #B87834;
+    --color-espresso: #171413;
+    --color-gold: #C5A880;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    background-color: var(--color-ivory);
+    color: var(--color-espresso);
+    max-width: 100%;
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  ::selection {
+    background-color: rgba(229, 218, 198, 0.6);
+    color: #171413;
+  }
+
+  /* Custom subtle scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #F4EFE6;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #C5A880;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #B87834;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .font-display {
+    font-family: "Cormorant Garamond", Georgia, serif;
+  }
+
+  .font-body {
+    font-family: "Plus Jakarta Sans", system-ui, sans-serif;
+  }
+
+  /* Glassmorphism restrained for luxury header */
+  .header-glass {
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    background-color: rgba(251, 249, 245, 0.88);
+  }
+
+  /* Shallow stone plinth effect */
+  .plinth-shadow {
+    box-shadow: 0 20px 40px -15px rgba(23, 20, 19, 0.12),
+                0 0 1px 1px rgba(23, 20, 19, 0.04);
+  }
+
+  .plinth-shadow-hover {
+    box-shadow: 0 30px 60px -15px rgba(23, 20, 19, 0.22),
+                0 0 1px 1px rgba(197, 168, 128, 0.2);
+  }
+
+  /* Freestanding bottle oval drop shadow */
+  .bottle-oval-shadow {
+    background: radial-gradient(ellipse at center, rgba(23, 20, 19, 0.28) 0%, rgba(23, 20, 19, 0.08) 50%, transparent 75%);
+  }
+
+  /* Safe area insets for mobile */
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom, 1rem);
+  }
+  .pt-safe {
+    padding-top: env(safe-area-inset-top, 0.5rem);
+  }
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera in horizontal galleries */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
